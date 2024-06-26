@@ -242,7 +242,7 @@ bool GDREPackedSource::try_open_pack(const String &p_path, bool p_replace_files,
 		Ref<FileAccessEncrypted> fae = memnew(FileAccessEncrypted);
 		if (fae.is_null()) {
 			GDRESettings::get_singleton()->_set_error_encryption(true);
-			ERR_FAIL_V_MSG(false, "Can't open encrypted pack directory.");
+			ERR_FAIL_V_MSG(false, "Can't open encrypted pack directory. :(");
 		}
 
 		Vector<uint8_t> key;
