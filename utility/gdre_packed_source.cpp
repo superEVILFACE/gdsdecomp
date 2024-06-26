@@ -249,6 +249,7 @@ bool GDREPackedSource::try_open_pack(const String &p_path, bool p_replace_files,
 		key.resize(32);
 		for (int i = 0; i < key.size(); i++) {
 			key.write[i] = script_encryption_key[i];
+			ERR_FAIL_V_MSG(false, script_encryption_key[i]);
 		}
 
 		Error err = fae->open_and_parse(f, key, FileAccessEncrypted::MODE_READ, false);
